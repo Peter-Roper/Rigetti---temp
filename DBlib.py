@@ -4,7 +4,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from os import path
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql.expression import select, exists
-#import sqlalchemy_utils
 import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -131,104 +130,6 @@ class Events(Base):
     edit_status = Column(CHAR)
                     # edit status can be 'a' appended, 'j' joined, 'd' deleted, 'e' edited
 
-#
-# class EditedManualIDSeizures(Base):
-#     __tablename__ = 'EditedManualIDSeizures'
-#     # using compound primary key composed of
-#     #       seizure_no
-#     #       animal
-#     #       filename
-#     seizure_no = Column(Integer, primary_key=True)
-#                     # unique id number for each seizure for one animal in one file
-#                     # a seizure from another animal in the same file can have the
-#                     # same id number
-#     # id number remains immutable, so can be out of sequence if new seizures are added
-#     # to an existing list, or have gaps in the list if seizures get deleted
-#     animal = Column(String, primary_key=True)
-#                     # 'name' of the animal/channel, or channel label in acq
-#     filename = Column(String, primary_key=True)
-#                     # filename of the EEG file containing this animal/seizure
-#     filepath = Column(String)
-#                     # ditto file path
-#     event_start = Column(Float)
-#                     # start time in number of seconds since the beginning of the file
-#     event_end = Column(Float)
-#                     # end time in number of seconds since the beginning of the file
-#     racine_score = Column(Integer)
-#     file_start = Column(DateTime)
-#                     # date and time of beginning of file
-#     meta_text = Column(Text)
-#                     # any general text associated with the file
-#     edit_status = Column(CHAR)
-#                     # edit status can be 'a' appended, 'j' joined, 'd' deleted, 'e' edited
-#     channel_no = Column(Integer)
-#                     # channel number in acq/smr file
-#     event_type = Column(String)
-#
-# class AlgorithmIDSeizures(Base):
-#     __tablename__ = 'AlgorithmIDSeizures'
-#     # using compound primary key composed of
-#     #       seizure_no
-#     #       animal
-#     #       filename
-#     seizure_no = Column(Integer, primary_key=True)
-#                     # unique id number for each seizure for one animal in one file
-#                     # a seizure from another animal in the same file can have the
-#                     # same id number
-#     # id number remains immutable, so can be out of sequence if new seizures are added
-#     # to an existing list, or have gaps in the list if seizures get deleted
-#     animal = Column(String, primary_key=True)
-#                     # 'name' of the animal/channel, or channel label in acq
-#     filename = Column(String, primary_key=True)
-#                     # filename of the EEG file containing this animal/seizure
-#     filepath = Column(String)
-#                     # ditto file path
-#     event_start = Column(Float)
-#                     # start time in number of seconds since the beginning of the file
-#     event_end = Column(Float)
-#                     # end time in number of seconds since the beginning of the file
-#     racine_score = Column(Integer)
-#     file_start = Column(DateTime)
-#                     # date and time of beginning of file
-#     meta_text = Column(Text)
-#                     # any general text associated with the file
-#     channel_no = Column(Integer)
-#                     # channel number in acq/smr file
-#     event_type = Column(String)
-#
-# class EditedAlgorithmIDSeizures(Base):
-#     __tablename__ = 'EditedAlgorithmIDSeizures'
-#     # using compound primary key composed of
-#     #       seizure_no
-#     #       animal
-#     #       filename
-#     seizure_no = Column(Integer, primary_key=True)
-#                     # unique id number for each seizure for one animal in one file
-#                     # a seizure from another animal in the same file can have the
-#                     # same id number
-#     # id number remains immutable, so can be out of sequence if new seizures are added
-#     # to an existing list, or have gaps in the list if seizures get deleted
-#     animal = Column(String, primary_key=True)
-#                     # 'name' of the animal/channel, or channel label in acq
-#     filename = Column(String, primary_key=True)
-#                     # filename of the EEG file containing this animal/seizure
-#     filepath = Column(String)
-#                     # ditto file path
-#     event_start = Column(Float)
-#                     # start time in number of seconds since the beginning of the file
-#     event_end = Column(Float)
-#                     # end time in number of seconds since the beginning of the file
-#     racine_score = Column(Integer)
-#     file_start = Column(DateTime)
-#                     # date and time of beginning of file
-#     meta_text = Column(Text)
-#                     # any general text associated with the file
-#     edit_status = Column(CHAR)
-#                     # edit status can be 'a' appended, 'j' joined, 'd' deleted, 'e' edited
-#     channel_no = Column(Integer)
-#                     # channel number in acq/smr file
-#     event_type = Column(String)
-#
 
 ################################ Functions ################################
 
